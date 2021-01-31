@@ -3,8 +3,8 @@ var y = window.prompt("Enter number of columns (up to 10): ");
 var lastClicked;
 var grid = clickableGrid(x,y,function(el,row,col,i){
     el.className='clicked';
-    if (lastClicked) lastClicked.className='';
-    lastClicked = el;
+    // if (lastClicked) lastClicked.className='';
+    // lastClicked = el;
 });
 
 document.body.appendChild(grid);

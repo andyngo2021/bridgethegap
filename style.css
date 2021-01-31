@@ -16,7 +16,7 @@ h1 {
     font-family:sans-serif; font-size:13px
 }
 .grid td.clicked {
-    background-image: url(images/seed.png);
+    background-image: url("seed.png");
     background-repeat: no-repeat;
     background-color:rgb(129, 65, 2);
 }

@@ -7,6 +7,17 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Bridge the Gap</title>
+    <link rel="icon" href="../static/images/bridge-the-gap-logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+    
     <link rel="stylesheet" href="../static/nicepage.css" media="screen">
 <link rel="stylesheet" href="../static/Page-2.css" media="screen">
     <script class="u-script" type="text/javascript" src="../static/jquery-1.9.1.min.js" defer=""></script>
@@ -52,11 +63,11 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('home') }}" style="padding: 8px 0px;">Home</a>
 </li></ul>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('home') }}" style="padding: 8px 0px;">Game</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('game') }}" style="padding: 8px 0px;">Game</a>
 </li></ul>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('home') }}" style="padding: 8px 0px;">Quiz</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('quiz') }}" style="padding: 8px 0px;">Quiz</a>
 </li></ul>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('home') }}" style="padding: 8px 0px;">Map</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-btn-text u-button-style u-nav-link" href="{{ url_for('layout') }}" style="padding: 8px 0px;">Map</a>
 </li></ul>
               </div>
             </div>

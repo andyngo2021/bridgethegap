@@ -1,0 +1,52 @@
+{% extends "layout.html" %} 
+{% block content %}
+<div class="text-area" style="font-size: 50px;">
+    <b>Resource Map</b>
+</div>
+<div class="text-area">
+    Simply enter your <b>zip code</b> to quickly and easily find gender-neutral restrooms, shelters, food banks, and more!
+</div>
+<div class="search-bar">
+    <form action="{{ url_for('process_data') }}" method="post">
+        <input type="text" id="address-form" name="address" oninput="check()">
+        <input id="submit-btn" disabled="disabled" type="submit">
+    </form>
+</div>
+<div class="text-area">
+    Note: It may take a while to load, so please hang on tight!
+</div>
+<div id="outer">
+<div id="mapid" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"></div>
+</div>
+<link rel="stylesheet" href="../static/style.css">
+<script src="../static/map.js"></script>
+<script>
+    // Get data from Python backend
+    let markers = {{ data | safe }};
+    console.log(markers);
+
+    var icon_template = L.Icon.extend({
+    options: {
+        shadowUrl: 'assets/empty.png',
+        iconSize: [30, 30],
+        shadowSize: [0, 0],
+        iconAnchor: [15, 15],
+        shadowAnchor: [0, 0],
+        popupAnchor: [-3, -30]
+    }
+    });
+    var shelter_icon = new icon_template({iconUrl:'../static/images/shelter.png'});
+    var points = [];
+    
+    for (let i=0; i<markers.length; i++)
+    {
+        let name = markers[i][0];
+        let address = markers[i][1];
+        let lat = markers[i][2];
+        let lon = markers[i][3];
+        L.marker([lat, lon], {icon: shelter_icon}).bindPopup("<b>"+name+"</b><br>"+address).addTo(mymap);
+    }
+    mymap = L.map('mapid').setView([markers[0][2], markers[0][3]], 13);
+</script>
+
+{% endblock content %}

@@ -1,5 +1,12 @@
 var x = window.prompt("Enter number of rows (up to 10): ");
 var y = window.prompt("Enter number of columns (up to 10): ");
+
+if (x>10 || y>10)
+{
+    // reload the page if the user entered values larger than the limit
+    location.reload();
+}
+
 var lastClicked;
 var grid = clickableGrid(x,y,function(el,row,col,i){
     el.className='clicked';

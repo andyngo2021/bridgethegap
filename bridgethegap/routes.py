@@ -20,10 +20,6 @@ def game():
 def layout():
     return render_template('map.html')
 
-@app.route("/quiz")
-def quiz():
-    return render_template('quiz.html')
-
 
 @app.route("/process_data", methods=['POST'])
 def process_data():
@@ -33,12 +29,6 @@ def process_data():
     data = processZipCode(address)
     return render_template('map.html', data=data)
 
-class Marker:
-    def __init__(self, name, address, lat, lon):
-        self.name = name
-        self.address = address
-        self.lat = lat
-        self.lon = lon
 
 def processZipCode(zip):
     data = []

@@ -1,0 +1,22 @@
+h1 {
+  color: rgb(146, 81, 153);
+  text-align:center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 60px;
+  padding-top: 30px;
+}
+
+.grid { margin:2em auto; border-collapse:collapse }
+.grid td {
+    cursor:pointer;
+    background-color:rgb(190, 131, 34);
+    width:60px; height:60px;
+    border:2px solid rgb(129, 62, 0);
+    text-align:center;
+    font-family:sans-serif; font-size:13px
+}
+.grid td.clicked {
+    background-image: url(images/seed.png);
+    background-repeat: no-repeat;
+    background-color:rgb(129, 65, 2);
+}
